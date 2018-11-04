@@ -29,4 +29,4 @@
 
 - Vì dùng TypeScript và Reactive Programming, learning curve của Angular khá "dốc", và khá khó đối với người mới bắt đầu. Nhưng khi đã làm quen với Angular rồi thì sẽ thấy rất dễ bắt kịp được Định hướng mà Angular muốn hướng Developers tới.
 
-
+- Repo của khoá học: https://github.com/nartc/Angular-Tutorials
