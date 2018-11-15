@@ -3,11 +3,8 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-root',
   template: `
-    <h1 [ngClass]="{
-      'with-border': withBorder,
-      'other-class': true
-    }">{{ title }}</h1>
-    <img [src]="imageSrc">
+    <h1 [class.with-border]="withBorder" [style.color]="textColor">{{ title }}</h1>
+    <img [src]="imageSrc" />
   `,
   styleUrls: ['./app.component.css'],
 })
@@ -16,10 +13,6 @@ export class AppComponent {
   imageSrc = 'https://picsum.photos/200';
 
   textColor = 'tomato';
-  backgroundColor = 'black';
-
-  styleObj = {color: this.textColor, background: this.backgroundColor};
-
   withBorder = true;
 }
 // DataBinding
