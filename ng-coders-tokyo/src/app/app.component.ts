@@ -34,6 +34,3 @@ export class AppComponent {
     this.withBorder = !this.withBorder;
   }
 }
-// DataBinding
-//// 1. PropertyBinding
-// 2. EventBinding
