@@ -13,12 +13,7 @@ import {
 @Component({
   selector: 'app-root',
   template: `
-    <h1
-      [class.with-border]="withBorder"
-      [style.color]="textColor"
-    >
-      {{ title }}
-    </h1>
+    <h1 [class.with-border]="withBorder" [style.color]="textColor">{{ title }}</h1>
     <button (click)="onButtonClick()">{{ withBorder ? 'Hide' : 'Show' }} Border</button>
   `,
   styleUrls: ['./app.component.css'],
