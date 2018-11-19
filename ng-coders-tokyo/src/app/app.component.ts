@@ -16,8 +16,6 @@ import {
     <h1
       [class.with-border]="withBorder"
       [style.color]="textColor"
-      (mouseover)="onTextMouseOver()"
-      (mouseout)="onTextMouseOut()"
     >
       {{ title }}
     </h1>
@@ -53,14 +51,6 @@ export class AppComponent
   }
   ngAfterContentChecked(): void {
     console.log('AfterContentChecked ran');
-  }
-
-  onTextMouseOver() {
-    this.textColor = 'dodgerblue';
-  }
-
-  onTextMouseOut() {
-    this.textColor = 'tomato';
   }
 
   onButtonClick() {

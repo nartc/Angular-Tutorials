@@ -17,15 +17,11 @@ import {
   template: `
     <h2>Hello from hello component</h2>
     <p>{{ text }} from parent</p>
-
-    <div *ngFor="let item of (object | keyvalue)">{{ item.key }}:{{ item.value }}</div>
   `,
-  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HelloComponent
   implements OnInit, OnChanges, OnDestroy, AfterViewInit, AfterContentInit, AfterViewChecked, AfterContentChecked {
   @Input() text: string;
-  @Input() object: any;
 
   ngOnInit(): void {
     console.log('Child OnInit ran');
