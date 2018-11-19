@@ -15,6 +15,7 @@ import {
   template: `
     <h1 [class.with-border]="withBorder" [style.color]="textColor">{{ title }}</h1>
     <button (click)="onButtonClick()">{{ withBorder ? 'Hide' : 'Show' }} Border</button>
+    <app-hello [text]="title"></app-hello>
   `,
   styleUrls: ['./app.component.css'],
 })
@@ -27,28 +28,29 @@ export class AppComponent
   withBorder = true;
 
   ngOnInit(): void {
-    console.log('OnInit ran');
+    console.log('Parent OnInit ran');
   }
   ngOnChanges(changes: SimpleChanges): void {
-    console.log('OnChanges ran', { changes });
+    console.log('Parent OnChanges ran', { changes });
   }
   ngOnDestroy(): void {
-    console.log('OnDestroy ran');
+    console.log('Parent OnDestroy ran');
   }
   ngAfterViewInit(): void {
-    console.log('AfterViewInit ran');
+    console.log('Parent AfterViewInit ran');
   }
   ngAfterContentInit(): void {
-    console.log('AfterContentInit ran');
+    console.log('Parent AfterContentInit ran');
   }
   ngAfterViewChecked(): void {
-    console.log('AfterViewChecked ran');
+    console.log('Parent AfterViewChecked ran');
   }
   ngAfterContentChecked(): void {
-    console.log('AfterContentChecked ran');
+    console.log('Parent AfterContentChecked ran');
   }
 
   onButtonClick() {
     this.withBorder = !this.withBorder;
+    this.title = 'Changed';
   }
 }
