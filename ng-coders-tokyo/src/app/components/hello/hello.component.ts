@@ -9,7 +9,6 @@ import {
   AfterViewChecked,
   AfterContentChecked,
   Input,
-  ChangeDetectionStrategy,
 } from '@angular/core';
 
 @Component({
