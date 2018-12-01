@@ -6,7 +6,6 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./hi.component.css']
 })
 export class HiComponent implements OnInit {
-
   constructor() { }
 
   ngOnInit() {
