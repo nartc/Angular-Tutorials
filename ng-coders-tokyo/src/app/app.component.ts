@@ -16,6 +16,7 @@ import {
     <h1 [class.with-border]="withBorder" [style.color]="textColor">{{ title }}</h1>
     <button (click)="onButtonClick()">{{ withBorder ? 'Hide' : 'Show' }} Border</button>
     <app-hello [text]="title" (buttonClicked)="onButtonClickedFromHello($event)"></app-hello>
+    <app-hi></app-hi>
   `,
   styleUrls: ['./app.component.css'],
 })

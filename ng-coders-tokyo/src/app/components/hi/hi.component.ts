@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from 'src/app/services/data.service';
 
 @Component({
   selector: 'app-hi',
@@ -6,9 +7,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./hi.component.css']
 })
 export class HiComponent implements OnInit {
-  constructor() { }
+
+  textFromHello: string;
+
+  constructor(private _dataService: DataService) { }
 
   ngOnInit() {
+    this._dataService.textFromHello$.subscribe(text => this.textFromHello = text);
   }
-
 }
