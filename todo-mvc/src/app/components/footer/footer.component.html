@@ -1,0 +1,14 @@
+<div class="footer w-100">
+  <div
+    class="h-100 position-absolute d-flex justify-content-between align-items-center"
+    style="top: 0; bottom: 0; left: 0; right: 0"
+  >
+    <span class="items-count"> {{ length }} item{{ length > 1 ? 's' : '' }} </span>
+    <div>
+      <button type="button" class="filter-btn" *ngFor="let btn of filterButtons" [ngClass]="{ active: btn.isActive }">
+        {{ btn.label }}
+      </button>
+    </div>
+    <button class="filter-btn clear-completed-btn">Clear Completed</button>
+  </div>
+</div>
