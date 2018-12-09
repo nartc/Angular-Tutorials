@@ -7,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TodoItemComponent implements OnInit {
 
+  isHovered = false;
+  isEditing = false;
+
   constructor() { }
 
   ngOnInit() {
