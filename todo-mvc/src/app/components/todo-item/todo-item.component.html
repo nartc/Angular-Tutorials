@@ -3,17 +3,28 @@
   (mouseover)="isHovered = true"
   (mouseout)="isHovered = false"
 >
-  <div class="todo"><input type="checkbox" class="toggle text-center" /> <label>Todo Item</label></div>
-
-  <div class="d-flex align-items-center">
-    <span class="icon-wrapper text-center edit" [ngClass]="{ active: isHovered }">
-      <i class="eva eva-edit-outline" (click)="isEditing = true"></i>
-    </span>
-    <span class="icon-wrapper text-center" [ngClass]="{ active: isHovered }"> <i class="eva eva-close"></i> </span>
+  <div class="todo">
+    <input
+      [id]="todo.id"
+      type="checkbox"
+      class="toggle text-center"
+      [checked]="todo.isCompleted"
+      [ngClass]="{ checked: todo.isCompleted }"
+      (change)="changeTodoStatus()"
+    />
+    <label [for]="todo.id">{{ todo.content }}</label>
   </div>
 
-  <form class="edit-form" *ngIf="isEditing">
-    <input type="text" name="editTodo">
+  <div class="d-flex align-items-center">
+    <span class="icon-wrapper text-center edit" [hidden]="todo.isCompleted" [ngClass]="{ active: isHovered }">
+      <i class="eva eva-edit-outline" (click)="isEditing = true"></i>
+    </span>
+    <span class="icon-wrapper text-center" [ngClass]="{ active: isHovered }">
+      <i class="eva eva-close" (click)="deleteTodo()"></i>
+    </span>
+  </div>
+
+  <form class="edit-form" (keyup)="submitEdit($event)" *ngIf="isEditing">
+    <input type="text" name="editTodo" [(ngModel)]="todo.content" />
   </form>
 </div>
-
