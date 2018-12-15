@@ -5,14 +5,14 @@
 >
   <div class="todo">
     <input
-      [id]="todo.id"
       type="checkbox"
+      [ngClass]="{ checked: todo.isCompleted }"
+      [id]="todo.id"
       class="toggle text-center"
       [checked]="todo.isCompleted"
-      [ngClass]="{ checked: todo.isCompleted }"
       (change)="changeTodoStatus()"
     />
-    <label [for]="todo.id">{{ todo.content }}</label>
+    <label [@fadeStrikeThrough]="todo.isCompleted ? 'completed' : 'active'" [for]="todo.id">{{ todo.content }}</label>
   </div>
 
   <div class="d-flex align-items-center">
@@ -20,7 +20,7 @@
       <i class="eva eva-edit-outline" (click)="isEditing = true"></i>
     </span>
     <span class="icon-wrapper text-center" [ngClass]="{ active: isHovered }">
-      <i class="eva eva-close" (click)="deleteTodo()"></i>
+      <i class="eva eva-close" (click)="removeTodo()"></i>
     </span>
   </div>
 

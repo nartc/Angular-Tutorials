@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { TodoService } from 'src/app/services/todo.service';
 import { Observable } from 'rxjs';
 import { Todo } from 'src/app/models/todo.model';
+import { TodoService } from 'src/app/services/todo.service';
 
 @Component({
   selector: 'app-todo-list',
@@ -18,16 +18,15 @@ export class TodoListComponent implements OnInit {
     this.todos$ = this.todoService.todos$;
   }
 
-  onChangeStatus(todo: Todo): void {
+  onChangeTodoStatus(todo: Todo) {
     this.todoService.changeTodoStatus(todo.id, todo.isCompleted);
   }
 
-  onEditTodo(todo: Todo): void {
+  onEditTodo(todo: Todo) {
     this.todoService.editTodo(todo.id, todo.content);
   }
 
-  onRemoveTodo(todo: Todo): void {
-    this.todoService.removeTodo(todo.id);
+  onDeleteTodo(todo: Todo) {
+    this.todoService.deleteTodo(todo.id);
   }
-
 }

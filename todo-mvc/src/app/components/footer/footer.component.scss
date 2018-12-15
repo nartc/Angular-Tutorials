@@ -32,8 +32,7 @@
   }
 
   & .clear-completed-btn {
-    // TODO: Change to hidden when implement completed todos
-    visibility: visible;
+    visibility: hidden;
 
     &.visible {
       visibility: visible;
